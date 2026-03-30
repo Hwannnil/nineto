@@ -48,18 +48,22 @@ img {
 
 .content {
   padding: 20px;
-}
-
-.socialring-count {
-  margin: 0 0 16px;
-  font-size: 14px;
-  color: #000;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 360px);
 }
 
 .socialring-list {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  margin-top: auto;
+}
+
+.socialring-count {
+  margin: 0 0 16px;
+  font-size: 14px;
+  color: #000;
 }
 
 .socialring {

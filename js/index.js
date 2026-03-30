@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbxeA_cfq0pd9XOm_L_CImU8UwHMaWNcYkrJupSMJ_RlDHthBCzzzp9CVzru-11sRYCcew/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbx6bMb3DVBq0LfSH7MZwfnm4vrdtniYpxMVVUBXUNbHX9NRnoxh4Zwm-2fUBZaqkM2e3A/exec";
 
 let socialrings = [];
 let schedules = [];
@@ -59,8 +59,9 @@ function bindSocialringEvents() {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const socialringId = button.dataset.socialringId;
-      const socialring = socialrings.find(
-        item => String(item["소셜링ID"]) === String(socialringId)
+
+      const socialring = socialrings.find(item =>
+        String(item["소셜링ID"]).trim() === String(socialringId).trim()
       );
 
       openScheduleModal(socialring);
@@ -89,12 +90,14 @@ function openScheduleModal(socialring) {
     emptyEl.classList.remove("hidden");
   } else {
     emptyEl.classList.add("hidden");
+
     scheduleListEl.innerHTML = filteredSchedules.map(item => `
       <button
         type="button"
         class="schedule-item"
         data-socialring-id="${socialring["소셜링ID"] || ""}"
         data-socialring-name="${socialring["소셜링명"] || ""}"
+        data-socialring-desc="${socialring["설명"] || ""}"
         data-schedule-id="${item["시간ID"] || ""}"
         data-schedule-label="${item["시간명"] || ""}"
       >
@@ -116,16 +119,16 @@ function bindScheduleEvents() {
     button.addEventListener("click", () => {
       const socialringId = button.dataset.socialringId;
       const socialringName = button.dataset.socialringName;
+      const socialringDesc = button.dataset.socialringDesc;
       const scheduleId = button.dataset.scheduleId;
       const scheduleLabel = button.dataset.scheduleLabel;
 
-      const targetUrl =
+      location.href =
         `./pages/step1.html?socialring_id=${encodeURIComponent(socialringId)}` +
         `&socialring_name=${encodeURIComponent(socialringName)}` +
+        `&socialring_desc=${encodeURIComponent(socialringDesc)}` +
         `&schedule_id=${encodeURIComponent(scheduleId)}` +
         `&schedule_label=${encodeURIComponent(scheduleLabel)}`;
-
-      location.href = targetUrl;
     });
   });
 }

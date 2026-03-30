@@ -19,7 +19,7 @@
             <h1>NINETO<br />신청페이지</h1>
           </div>
           <div class="main-card">
-            <img src="../img/apply/main.jpg" alt="대표 이미지" />
+            <img src="../img/main/nineto_main.png" alt="대표 이미지" />
           </div>
           <div class="btn-wrap">
             <button class="entry-btn next-step" data-next="1" type="button">
@@ -33,20 +33,17 @@
       <section class="page form-page">
         <div class="page-bg"></div>
         <div class="page-inner form-inner">
-          <div class="progress-text">1/5</div>
+          <div class="progress-text">1/7</div>
           <div class="progress-wrap">
             <button class="back-btn prev-step" type="button">‹</button>
-            <div class="progress-bar"><div class="progress-fill w-20"></div></div>
+            <div class="progress-bar"><div class="progress-fill w-14"></div></div>
           </div>
           <div class="question-box">
-            <h2>참여 희망 날짜를 선택해주세요</h2>
-            <p>1차: 2시간 30분 / AFTER PARTY: 1시간 30분</p>
+            <h2>나인투에서 사용할 닉네임을 입력해주세요</h2>
           </div>
-
-          <div class="choice-list" id="scheduleList">
-            <!-- Apps Script에서 자동 로드 -->
+          <div class="input-wrap">
+            <input type="text" class="text-input" id="nicknameInput" placeholder="닉네임 입력" />
           </div>
-
           <div class="next-wrap">
             <button class="next-btn next-step" data-next="2" type="button">
               <span>›</span>
@@ -59,17 +56,32 @@
       <section class="page form-page">
         <div class="page-bg"></div>
         <div class="page-inner form-inner">
-          <div class="progress-text">2/5</div>
+          <div class="progress-text">2/7</div>
           <div class="progress-wrap">
             <button class="back-btn prev-step" type="button">‹</button>
-            <div class="progress-bar"><div class="progress-fill w-40"></div></div>
+            <div class="progress-bar"><div class="progress-fill w-28"></div></div>
           </div>
           <div class="question-box">
-            <h2>이름을 입력해주세요</h2>
+            <h2>개인정보를 입력해주세요</h2>
           </div>
+
+          <div class="choice-list two-col" id="genderList">
+            <button class="choice-item gender-item" type="button" data-gender="남성">남성</button>
+            <button class="choice-item gender-item" type="button" data-gender="여성">여성</button>
+          </div>
+
           <div class="input-wrap">
-            <input type="text" class="text-input" id="nameInput" placeholder="이름 입력" />
+            <input type="text" class="text-input" id="ageInput" placeholder="나이 입력" />
           </div>
+
+          <div class="input-wrap">
+            <input type="text" class="text-input" id="jobInput" placeholder="직업 입력" />
+          </div>
+
+          <div class="input-wrap">
+            <textarea class="text-input textarea-input" id="charmInput" placeholder="나만의 매력 입력"></textarea>
+          </div>
+
           <div class="next-wrap">
             <button class="next-btn next-step" data-next="3" type="button">
               <span>›</span>
@@ -82,16 +94,16 @@
       <section class="page form-page">
         <div class="page-bg"></div>
         <div class="page-inner form-inner">
-          <div class="progress-text">3/5</div>
+          <div class="progress-text">3/7</div>
           <div class="progress-wrap">
             <button class="back-btn prev-step" type="button">‹</button>
-            <div class="progress-bar"><div class="progress-fill w-60"></div></div>
+            <div class="progress-bar"><div class="progress-fill w-42"></div></div>
           </div>
           <div class="question-box">
-            <h2>직업을 입력해주세요</h2>
+            <h2>안내 문자를 받을 전화번호를 알려주세요</h2>
           </div>
           <div class="input-wrap">
-            <input type="text" class="text-input" id="jobInput" placeholder="직업 입력" />
+            <input type="tel" class="text-input" id="phoneInput" placeholder="010-0000-0000" />
           </div>
           <div class="next-wrap">
             <button class="next-btn next-step" data-next="4" type="button">
@@ -105,16 +117,17 @@
       <section class="page form-page">
         <div class="page-bg"></div>
         <div class="page-inner form-inner">
-          <div class="progress-text">4/5</div>
+          <div class="progress-text">4/7</div>
           <div class="progress-wrap">
             <button class="back-btn prev-step" type="button">‹</button>
-            <div class="progress-bar"><div class="progress-fill w-80"></div></div>
+            <div class="progress-bar"><div class="progress-fill w-57"></div></div>
           </div>
           <div class="question-box">
-            <h2>연락 받을 전화번호를 입력해주세요</h2>
+            <h2>안내 문자를 받을 인스타그램 계정을 알려주세요</h2>
+            <p>선택 항목입니다.</p>
           </div>
           <div class="input-wrap">
-            <input type="tel" class="text-input" id="phoneInput" placeholder="010-0000-0000" />
+            <input type="text" class="text-input" id="instagramInput" placeholder="@instagram 아이디" />
           </div>
           <div class="next-wrap">
             <button class="next-btn next-step" data-next="5" type="button">
@@ -128,22 +141,93 @@
       <section class="page form-page">
         <div class="page-bg"></div>
         <div class="page-inner form-inner">
-          <div class="progress-text">5/5</div>
+          <div class="progress-text">5/7</div>
+          <div class="progress-wrap">
+            <button class="back-btn prev-step" type="button">‹</button>
+            <div class="progress-bar"><div class="progress-fill w-71"></div></div>
+          </div>
+          <div class="question-box">
+            <h2>참가비 입금 안내를 확인해주세요</h2>
+            <p>
+              토스뱅크 오영채<br />
+              입금 후 신청이 확정됩니다.<br /><br />
+              1부: 20:00-23:00 (180분) / 28,000원<br />
+              2부: 23:00-01:00 (120분) / 20,000원
+            </p>
+          </div>
+
+          <div class="choice-list" id="paymentConfirmList">
+            <button class="choice-item payment-item" type="button" data-value="확인완료">
+              입금 안내를 확인했습니다
+            </button>
+          </div>
+
+          <div class="next-wrap">
+            <button class="next-btn next-step" data-next="6" type="button">
+              <span>›</span>
+              <span>다음</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="page form-page">
+        <div class="page-bg"></div>
+        <div class="page-inner form-inner">
+          <div class="progress-text">6/7</div>
+          <div class="progress-wrap">
+            <button class="back-btn prev-step" type="button">‹</button>
+            <div class="progress-bar"><div class="progress-fill w-85"></div></div>
+          </div>
+          <div class="question-box">
+            <h2>환불계좌 정보를 입력해주세요</h2>
+          </div>
+
+          <div class="input-wrap">
+            <input type="text" class="text-input" id="bankNameInput" placeholder="은행명 입력" />
+          </div>
+
+          <div class="input-wrap">
+            <input type="text" class="text-input" id="accountNumberInput" placeholder="계좌번호 입력" />
+          </div>
+
+          <div class="input-wrap">
+            <input type="text" class="text-input" id="accountHolderInput" placeholder="예금주 입력" />
+          </div>
+
+          <div class="next-wrap">
+            <button class="next-btn next-step" data-next="7" type="button">
+              <span>›</span>
+              <span>다음</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="page form-page">
+        <div class="page-bg"></div>
+        <div class="page-inner form-inner">
+          <div class="progress-text">7/7</div>
           <div class="progress-wrap">
             <button class="back-btn prev-step" type="button">‹</button>
             <div class="progress-bar"><div class="progress-fill w-100"></div></div>
           </div>
+
           <div class="question-box">
-            <h2>성별과 MBTI를 선택해주세요</h2>
+            <h2>공지사항 및 동의서 확인</h2>
+            <p>
+              공지사항을 확인해 주세요.<br />
+              개인정보 수집 및 이용에 동의해야 신청이 가능합니다.
+            </p>
           </div>
 
-          <div class="choice-list two-col" id="genderList">
-            <button class="choice-item gender-item" type="button" data-gender="남성">남성</button>
-            <button class="choice-item gender-item" type="button" data-gender="여성">여성</button>
-          </div>
-
-          <div class="input-wrap">
-            <input type="text" class="text-input" id="mbtiInput" placeholder="MBTI 입력 (예: ENFP)" />
+          <div class="choice-list">
+            <button class="choice-item notice-item" type="button" data-value="확인완료">
+              공지사항을 확인했습니다
+            </button>
+            <button class="choice-item agree-item" type="button" data-value="동의">
+              개인정보 수집 및 이용에 동의합니다
+            </button>
           </div>
 
           <div class="next-wrap">
@@ -156,139 +240,6 @@
       </section>
     </div>
 
-    <script>
-      const API_URL =
-        "https://script.google.com/macros/s/AKfycbx60RQ43ZIdG2KW1VVBIRs_NiEu6U8q3icZd0KVrdjq4qawB7JvLyP7SB1lyIIAhD2OSw/exec";
-
-      const pages = document.querySelectorAll(".page");
-      let currentPage = 0;
-
-      let selectedScheduleId = "";
-      let selectedScheduleLabel = "";
-      let selectedGender = "";
-
-      function showPage(index) {
-        pages.forEach((page, i) => {
-          page.classList.remove("active", "prev");
-          if (i < index) {
-            page.classList.add("prev");
-          } else if (i === index) {
-            page.classList.add("active");
-          }
-        });
-        currentPage = index;
-      }
-
-      document.querySelectorAll(".next-step").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const nextIndex = Number(btn.dataset.next);
-          showPage(nextIndex);
-        });
-      });
-
-      document.querySelectorAll(".prev-step").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          if (currentPage > 0) {
-            showPage(currentPage - 1);
-          }
-        });
-      });
-
-      async function loadSchedule() {
-        const res = await fetch(`${API_URL}?type=config`);
-        const data = await res.json();
-
-        const scheduleList = document.getElementById("scheduleList");
-        const schedule = data.schedule || [];
-
-        scheduleList.innerHTML = schedule
-          .map(
-            (item) => `
-              <button
-                class="choice-item schedule-item"
-                type="button"
-                data-id="${item.id || ""}"
-                data-label="${item.label || ""}">
-                ${item.label || ""}
-              </button>
-            `
-          )
-          .join("");
-
-        document.querySelectorAll(".schedule-item").forEach((btn) => {
-          btn.addEventListener("click", () => {
-            document.querySelectorAll(".schedule-item").forEach((item) => {
-              item.classList.remove("selected");
-            });
-            btn.classList.add("selected");
-            selectedScheduleId = btn.dataset.id;
-            selectedScheduleLabel = btn.dataset.label;
-          });
-        });
-      }
-
-      document.querySelectorAll(".gender-item").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          document.querySelectorAll(".gender-item").forEach((item) => {
-            item.classList.remove("selected");
-          });
-          btn.classList.add("selected");
-          selectedGender = btn.dataset.gender;
-        });
-      });
-
-      document.getElementById("submitBtn").addEventListener("click", async () => {
-        const payload = {
-          schedule_id: selectedScheduleId,
-          schedule_label: selectedScheduleLabel,
-          name: document.getElementById("nameInput").value.trim(),
-          job: document.getElementById("jobInput").value.trim(),
-          phone: document.getElementById("phoneInput").value.trim(),
-          gender: selectedGender,
-          mbti: document.getElementById("mbtiInput").value.trim(),
-        };
-
-        if (!payload.schedule_label) {
-          alert("참여 희망 날짜를 선택해주세요.");
-          return;
-        }
-        if (!payload.name) {
-          alert("이름을 입력해주세요.");
-          return;
-        }
-        if (!payload.phone) {
-          alert("전화번호를 입력해주세요.");
-          return;
-        }
-        if (!payload.gender) {
-          alert("성별을 선택해주세요.");
-          return;
-        }
-
-        try {
-          const res = await fetch(API_URL, {
-            method: "POST",
-            headers: {
-              "Content-Type": "text/plain;charset=utf-8",
-            },
-            body: JSON.stringify(payload),
-          });
-
-          const result = await res.json();
-
-          if (result.ok) {
-            alert("신청이 완료되었습니다.");
-          } else {
-            alert("전송 중 오류가 발생했습니다: " + (result.message || ""));
-          }
-        } catch (error) {
-          alert("전송 중 오류가 발생했습니다.");
-          console.error(error);
-        }
-      });
-
-      showPage(0);
-      loadSchedule();
-    </script>
+    <script src="../js/subscription_main.js"></script>
   </body>
 </html>

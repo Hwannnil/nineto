@@ -29,7 +29,7 @@ body {
   box-sizing: border-box;
 }
 
-.apply-button {
+#applyButton {
   display: block;
   width: 100%;
   margin: 0 auto;
