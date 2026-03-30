@@ -3,12 +3,25 @@ const API_URL = "https://script.google.com/macros/s/AKfycbx6bMb3DVBq0LfSH7MZwfnm
 let socialrings = [];
 let schedules = [];
 
+function showLoading() {
+  document.getElementById("loading-wrap").classList.remove("hidden");
+  document.getElementById("socialring-list").classList.add("hidden");
+}
+
+function hideLoading() {
+  document.getElementById("loading-wrap").classList.add("hidden");
+  document.getElementById("socialring-list").classList.remove("hidden");
+}
+
 async function loadConfig() {
+  showLoading();
+
   try {
     const response = await fetch(`${API_URL}?type=config`);
     const data = await response.json();
 
     if (!data.ok) {
+      hideLoading();
       alert("데이터를 불러오지 못했습니다.");
       return;
     }
@@ -17,16 +30,12 @@ async function loadConfig() {
     schedules = data.schedule || [];
 
     renderSocialrings(socialrings);
-    renderCount(data.socialring_count || socialrings.length);
+    hideLoading();
   } catch (error) {
     console.error(error);
+    hideLoading();
     alert("서버 연결에 실패했습니다.");
   }
-}
-
-function renderCount(count) {
-  const countEl = document.getElementById("socialring-count");
-  countEl.textContent = `소셜링 ${count}개`;
 }
 
 function renderSocialrings(items) {

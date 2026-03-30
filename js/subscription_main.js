@@ -14,6 +14,11 @@ const selectedSocialringId = params.get("socialring_id") || "";
 const selectedSocialringName = params.get("socialring_name") || "";
 const selectedScheduleId = params.get("schedule_id") || "";
 const selectedScheduleLabel = params.get("schedule_label") || "";
+const noticeCheckBtn = document.getElementById("noticeCheckBtn");
+const noticeModal = document.getElementById("noticeModal");
+const noticeModalClose = document.getElementById("noticeModalClose");
+const noticeModalX = document.getElementById("noticeModalX");
+const noticeConfirmBtn = document.getElementById("noticeConfirmBtn");
 
 function showPage(index) {
   pages.forEach((page, i) => {
@@ -78,6 +83,40 @@ function bindChoiceEvents() {
       btn.classList.add("selected");
       privacyAgreed = btn.dataset.value || "";
     });
+  });
+}
+
+function openNoticeModal() {
+  noticeModal.classList.add("open");
+  noticeModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closeNoticeModal() {
+  noticeModal.classList.remove("open");
+  noticeModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+if (noticeCheckBtn) {
+  noticeCheckBtn.addEventListener("click", () => {
+    openNoticeModal();
+  });
+}
+
+if (noticeModalClose) {
+  noticeModalClose.addEventListener("click", closeNoticeModal);
+}
+
+if (noticeModalX) {
+  noticeModalX.addEventListener("click", closeNoticeModal);
+}
+
+if (noticeConfirmBtn) {
+  noticeConfirmBtn.addEventListener("click", () => {
+    noticeCheckBtn.classList.add("confirmed", "selected");
+    noticeCheckBtn.setAttribute("data-confirmed", "true");
+    closeNoticeModal();
   });
 }
 
