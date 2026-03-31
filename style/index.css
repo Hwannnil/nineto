@@ -5,8 +5,8 @@
 body {
   margin: 0;
   font-family: "Arial";
-  background: #37CEF0;
-  color: #000;
+  background: #000000;
+  color: #000000;
 }
 
 body.modal-open {
@@ -22,7 +22,7 @@ img {
   max-width: 480px;
   min-height: 100vh;
   margin: 0 auto;
-  background: #37CEF0;
+  background: #000000;
 }
 
 .topbar {
@@ -56,7 +56,7 @@ img {
 
 .loading-wrap {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   flex: 1;
   min-height: calc(100vh - 500px);
@@ -94,17 +94,22 @@ img {
   display: flex;
   gap: 14px;
   padding: 12px;
-  border-radius: 12px;
-  background: #000;
-  color: #fff;
+  border-radius: 20px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  color: #000000;
   text-decoration: none;
+  backdrop-filter: blur(8px);
 }
 
 .socialring-button {
   width: 100%;
-  border: none;
   text-align: left;
   cursor: pointer;
+}
+
+.main-socialring-image.hidden {
+  display: none;
 }
 
 .socialring-img {
